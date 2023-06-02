@@ -67,22 +67,22 @@ function UpdateBookInfo(props) {
           <div className='col-md-8 m-auto'>
             <br />
             <Link to='/' className='btn btn-outline-warning float-left'>
-              Show BooK List
+              Δείξε τη Λίστα Βιβλίων
             </Link>
           </div>
           <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Edit Book</h1>
-            <p className='lead text-center'>Update Book's Info</p>
+            <h1 className='display-4 text-center'>Επεξεργασία Βιβλίου</h1>
+            <p className='lead text-center'>Ενημέρωση των πληροφοριών Βιβλίου</p>
           </div>
         </div>
 
         <div className='col-md-8 m-auto'>
           <form noValidate onSubmit={onSubmit}>
             <div className='form-group'>
-              <label htmlFor='title'>Title</label>
+              <label htmlFor='title'>Τίτλος</label>
               <input
                 type='text'
-                placeholder='Title of the Book'
+                placeholder='Τίτλος του Βιβλίου'
                 name='title'
                 className='form-control'
                 value={book.title}
@@ -105,7 +105,7 @@ function UpdateBookInfo(props) {
             <br />
 
             <div className='form-group'>
-              <label htmlFor='author'>Author</label>
+              <label htmlFor='author'>Συγγραφέας</label>
               <input
                 type='text'
                 placeholder='Author'
@@ -118,7 +118,7 @@ function UpdateBookInfo(props) {
             <br />
 
             <div className='form-group'>
-              <label htmlFor='description'>Description</label>
+              <label htmlFor='description'>Περιγραφή</label>
               <textarea
                 type='text'
                 placeholder='Description of the Book'
@@ -131,7 +131,7 @@ function UpdateBookInfo(props) {
             <br />
 
             <div className='form-group'>
-              <label htmlFor='published_date'>Published Date</label>
+              <label htmlFor='published_date'>Ημερομηνία Έκδοσης</label>
               <input
                 type='text'
                 placeholder='Published Date'
@@ -144,7 +144,7 @@ function UpdateBookInfo(props) {
             <br />
 
             <div className='form-group'>
-              <label htmlFor='publisher'>Publisher</label>
+              <label htmlFor='publisher'>Εκδότης</label>
               <input
                 type='text'
                 placeholder='Publisher of the Book'
@@ -160,7 +160,7 @@ function UpdateBookInfo(props) {
               type='submit'
               className='btn btn-outline-info btn-lg btn-block'
             >
-              Update Book
+              Ενημέρωση Βιβλίου
             </button>
           </form>
         </div>

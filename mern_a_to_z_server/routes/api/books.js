@@ -7,7 +7,7 @@ const Book = require('../../models/Book');
 // @route GET api/books/test
 // @description tests books route
 // @access Public
-router.get('/test', (req, res) => res.send('book route testing!'));
+router.get('/test', (req, res) => res.send('Δοκιμή διαδρομής βιβλίου!'));
 
 // @route GET api/books
 // @description Get all books
@@ -15,7 +15,7 @@ router.get('/test', (req, res) => res.send('book route testing!'));
 router.get('/', (req, res) => {
   Book.find()
     .then((books) => res.json(books))
-    .catch((err) => res.status(404).json({ nobooksfound: 'No Books found' }));
+    .catch((err) => res.status(404).json({ nobooksfound: 'Δεν βρέθηκαν βιβλία' }));
 });
 
 // @route GET api/books/:id
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Book.findById(req.params.id)
     .then((book) => res.json(book))
-    .catch((err) => res.status(404).json({ nobookfound: 'No Book found' }));
+    .catch((err) => res.status(404).json({ nobookfound: 'Δεν βρέθηκαν βιβλία' }));
 });
 
 // @route GET api/books
@@ -32,8 +32,8 @@ router.get('/:id', (req, res) => {
 // @access Public
 router.post('/', (req, res) => {
   Book.create(req.body)
-    .then((book) => res.json({ msg: 'Book added successfully' }))
-    .catch((err) => res.status(400).json({ error: 'Unable to add this book' }));
+    .then((book) => res.json({ msg: 'Το βιβλίο προστέθηκε με επιτυχία' }))
+    .catch((err) => res.status(400).json({ error: 'Δεν είναι δυνατή η προσθήκη αυτού του βιβλίου' }));
 });
 
 // @route GET api/books/:id
@@ -41,9 +41,9 @@ router.post('/', (req, res) => {
 // @access Public
 router.put('/:id', (req, res) => {
   Book.findByIdAndUpdate(req.params.id, req.body)
-    .then((book) => res.json({ msg: 'Updated successfully' }))
+    .then((book) => res.json({ msg: 'Ενημερώθηκε με επιτυχία' }))
     .catch((err) =>
-      res.status(400).json({ error: 'Unable to update the Database' })
+      res.status(400).json({ error: 'Δεν είναι δυνατή η ενημέρωση της Βάσης Δεδομένων' })
     );
 });
 
@@ -52,8 +52,8 @@ router.put('/:id', (req, res) => {
 // @access Public
 router.delete('/:id', (req, res) => {
   Book.findByIdAndRemove(req.params.id, req.body)
-    .then((book) => res.json({ mgs: 'Book entry deleted successfully' }))
-    .catch((err) => res.status(404).json({ error: 'No such a book' }));
+    .then((book) => res.json({ mgs: 'Η καταχώρηση βιβλίου διαγράφηκε με επιτυχία ' }))
+    .catch((err) => res.status(404).json({ error: 'Δεν υπάρχει τέτοιο βιβλίο' }));
 });
 
 module.exports = router;

@@ -50,18 +50,18 @@ const CreateBook = (props) => {
           <div className='col-md-8 m-auto'>
             <br />
             <Link to='/' className='btn btn-outline-warning float-left'>
-              Show BooK List
+                Εμφάνιση Λίστας Βιβλίων
             </Link>
           </div>
           <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Add Book</h1>
-            <p className='lead text-center'>Create new book</p>
+            <h1 className='display-4 text-center'>Πρόσθεσε Βιβλίο</h1>
+            <p className='lead text-center'>Δημιούργησε νέο βιβλίο</p>
 
             <form noValidate onSubmit={onSubmit}>
               <div className='form-group'>
                 <input
                   type='text'
-                  placeholder='Title of the Book'
+                  placeholder='Τίτλος του Βιβλίου'
                   name='title'
                   className='form-control'
                   value={book.title}
@@ -84,7 +84,7 @@ const CreateBook = (props) => {
               <div className='form-group'>
                 <input
                   type='text'
-                  placeholder='Author'
+                  placeholder='Συγγραφέας'
                   name='author'
                   className='form-control'
                   value={book.author}
@@ -95,7 +95,7 @@ const CreateBook = (props) => {
               <div className='form-group'>
                 <input
                   type='text'
-                  placeholder='Describe this book'
+                  placeholder='Περίγραψε το Βιβλίο'
                   name='description'
                   className='form-control'
                   value={book.description}
@@ -116,7 +116,7 @@ const CreateBook = (props) => {
               <div className='form-group'>
                 <input
                   type='text'
-                  placeholder='Publisher of this Book'
+                  placeholder='Εκδότης αυτού του βιβλίου'
                   name='publisher'
                   className='form-control'
                   value={book.publisher}
@@ -126,6 +126,7 @@ const CreateBook = (props) => {
 
               <input
                 type='submit'
+                value='Υποβολή'
                 className='btn btn-outline-warning btn-block mt-4'
               />
             </form>
