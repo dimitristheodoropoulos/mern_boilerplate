@@ -1,19 +1,15 @@
 const mongoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURI');
+require('dotenv').config(); // Import dotenv to load variables from .env
 
-const connectDB = async () => {
-  try {
-    mongoose.set('strictQuery', true);
-    await mongoose.connect(db, {
-      useNewUrlParser: true,
-    });
+mongoose.set('strictQuery', false); // Or use true if you prefer strict query behavior
 
-    console.log('MongoDB is Connected...');
-  } catch (err) {
-    console.error(err.message);
-    process.exit(1);
-  }
+// Use the environment variable MONGODB_URI or fall back to localhost if not set
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/myDatabase';
+
+const connectDB = () => {
+  mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected locally'))
+    .catch((err) => console.log('MongoDB connection error:', err));
 };
 
-module.exports = connectDB;
+module.exports = connectDB; // Export the function

@@ -26,6 +26,11 @@ const BookSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  category: {
+    type: String,
+    required: true,
+    enum: ['fiction', 'non-fiction', 'science fiction', 'fantasy', 'biography', 'history', 'mystery'], // Adjust the categories as needed
+  },
 });
 
 module.exports = Book = mongoose.model('book', BookSchema);
